@@ -9,7 +9,11 @@ public class Main {
         Lista lista = new Lista();
         int tama=0;
         int tamaaux=0;
-
+        
+//        public bolean isDigit(char ch){
+            
+  //      }
+        
         do{
                 System.out.print("Proporcione el tamaño de la lista ligada: ");
                 Scanner ta =new Scanner(System.in);
@@ -46,9 +50,12 @@ public class Main {
              		System.out.print("*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-**-*-*-*-*-*-*-*-*-*-*-**-*-*-*-*-*-*-*-*-*-*-*\n");
              		if(tamaaux>0) {
                  		
+                                int numero;
                                 System.out.print("Proporcione el numero a ingresar en la lista ligada\n");
                                 Scanner nume = new Scanner(System.in);
-                                int numero=nume.nextInt();
+                                //if(nume.isDigit()){
+                                //}
+                                numero=nume.nextInt();
                                 tamaaux=tamaaux-1;
                                 lista.editarPorPosicion(contador, numero);
                                 lista.listar();
