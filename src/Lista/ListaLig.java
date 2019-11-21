@@ -10,11 +10,13 @@ public class ListaLig extends javax.swing.JFrame {
     
     public ListaLig() {
         initComponents();
-        validaBoton();
+        validaBotonTamanio();
+        validaBotonNodo();
     }
     
-    public void validaBoton(){
-        if(TamListJTF.equals("")){
+    public void validaBotonTamanio(){
+        //System.out.println("1");
+        if(TamListJTF.getText().equals("")){
             checkJBT.setEnabled(false);
         }else{
             try {
@@ -22,6 +24,19 @@ public class ListaLig extends javax.swing.JFrame {
                   checkJBT.setEnabled(true);
             } catch (Exception e) {
                 checkJBT.setEnabled(false);
+            }
+        }
+    }
+    
+    public void validaBotonNodo(){
+        if(ValoresNodoJTF.getText().equals("")){
+            InsertNodojBtn.setEnabled(false);
+        }else{
+            try {
+                Integer.parseInt(ValoresNodoJTF.getText());
+                InsertNodojBtn.setEnabled(true);
+            } catch (Exception e) {
+                InsertNodojBtn.setEnabled(false);
             }
         }
     }
@@ -41,23 +56,107 @@ public class ListaLig extends javax.swing.JFrame {
         numNodos = TamListJTF.getText();
         nodo = Integer.parseInt(numNodos);
         
-        if((nodo > 1) && (nodo <= 10)){
+        if((nodo > 1)){
             
             switch(nodo){
                 
-                case 1:
+                case 1: JOptionPane.showMessageDialog(null, "La lista debe ser mayor a 1");
+                
+                case 2: FlechaLabel2.setVisible(false);
+                        nodo3JP.setVisible(false);
+                        FlechaLabel3.setVisible(false);
+                        nodo4JP.setVisible(false);
+                        FlechaLabel4.setVisible(false);
+                        nodo5JP.setVisible(false);
+                        FlechaLabel5.setVisible(false);
+                        nodo6JP.setVisible(false);
+                        FlechaLabel6.setVisible(false);
+                        nodo7JP.setVisible(false);
+                        FlechaLabel7.setVisible(false);
+                        nodo8JP.setVisible(false);
+                        FlechaLabel8.setVisible(false);
+                        nodo9JP.setVisible(false);
+                        FlechaLabel9.setVisible(false);
+                        nodo10JP.setVisible(false);
+                
+                case 3: FlechaLabel3.setVisible(false);
+                        nodo4JP.setVisible(false);
+                        FlechaLabel4.setVisible(false);
+                        nodo5JP.setVisible(false);
+                        FlechaLabel5.setVisible(false);
+                        nodo6JP.setVisible(false);
+                        FlechaLabel6.setVisible(false);
+                        nodo7JP.setVisible(false);
+                        FlechaLabel7.setVisible(false);
+                        nodo8JP.setVisible(false);
+                        FlechaLabel8.setVisible(false);
+                        nodo9JP.setVisible(false);
+                        FlechaLabel9.setVisible(false);
+                        nodo10JP.setVisible(false);
+                
+                case 4: FlechaLabel4.setVisible(false);
+                        nodo5JP.setVisible(false);
+                        FlechaLabel5.setVisible(false);
+                        nodo6JP.setVisible(false);
+                        FlechaLabel6.setVisible(false);
+                        nodo7JP.setVisible(false);
+                        FlechaLabel7.setVisible(false);
+                        nodo8JP.setVisible(false);
+                        FlechaLabel8.setVisible(false);
+                        nodo9JP.setVisible(false);
+                        FlechaLabel9.setVisible(false);
+                        nodo10JP.setVisible(false);
                     
+                case 5: FlechaLabel5.setVisible(false);
+                        nodo6JP.setVisible(false);
+                        FlechaLabel6.setVisible(false);
+                        nodo7JP.setVisible(false);
+                        FlechaLabel7.setVisible(false);
+                        nodo8JP.setVisible(false);
+                        FlechaLabel8.setVisible(false);
+                        nodo9JP.setVisible(false);
+                        FlechaLabel9.setVisible(false);
+                        nodo10JP.setVisible(false);
+                    
+                case 6: FlechaLabel6.setVisible(false);
+                        nodo7JP.setVisible(false);
+                        FlechaLabel7.setVisible(false);
+                        nodo8JP.setVisible(false);
+                        FlechaLabel8.setVisible(false);
+                        nodo9JP.setVisible(false);
+                        FlechaLabel9.setVisible(false);
+                        nodo10JP.setVisible(false);
+                    
+                case 7: FlechaLabel7.setVisible(false);
+                        nodo8JP.setVisible(false);
+                        FlechaLabel8.setVisible(false);
+                        nodo9JP.setVisible(false);
+                        FlechaLabel9.setVisible(false);
+                        nodo10JP.setVisible(false);
+                    
+                case 8: FlechaLabel8.setVisible(false);
+                        nodo9JP.setVisible(false);
+                        FlechaLabel9.setVisible(false);
+                        nodo10JP.setVisible(false);
+                    
+                case 9: FlechaLabel9.setVisible(false);
+                        nodo10JP.setVisible(false);
+                    
+                case 10: nodo10JP.setVisible(false);
+                      
             }
-        } 
-        //System.out.println("-->"+numNodos);
-        //System.out.println("-->"+nodo);
+        }else{
+            JOptionPane.showMessageDialog(null, "La lista debe ser mayor a 1");
+        }
+        System.out.println("-->"+numNodos);
+        System.out.println("------->"+nodo);
     }
     
-    /*switch(){
+    public void insertaValor(){
+        int maximo;
+        
+    }
     
-    case1: 
-            if
-    }*/
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -105,14 +204,15 @@ public class ListaLig extends javax.swing.JFrame {
         nodo7JP = new javax.swing.JPanel();
         jLabel17 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
-        checkJBT = new javax.swing.JButton();
-        TamListJTF = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
+        InsertNodojBtn = new javax.swing.JButton();
         ValoresNodoJTF = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        TamListJTF = new javax.swing.JTextField();
+        checkJBT = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
+        canvas1 = new java.awt.Canvas();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -178,6 +278,7 @@ public class ListaLig extends javax.swing.JFrame {
         nodo4JP.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         nodo4JP.setMaximumSize(new java.awt.Dimension(30000, 32767));
 
+        jLabel14.setFont(new java.awt.Font("Noto Sans CJK SC", 1, 12)); // NOI18N
         jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel14.setText("004000");
 
@@ -187,7 +288,7 @@ public class ListaLig extends javax.swing.JFrame {
             nodo4JPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(nodo4JPLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+                .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         nodo4JPLayout.setVerticalGroup(
@@ -202,6 +303,7 @@ public class ListaLig extends javax.swing.JFrame {
         nodo5JP.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         nodo5JP.setPreferredSize(new java.awt.Dimension(80, 35));
 
+        jLabel15.setFont(new java.awt.Font("Noto Sans CJK SC", 1, 12)); // NOI18N
         jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel15.setText("005000");
 
@@ -225,6 +327,7 @@ public class ListaLig extends javax.swing.JFrame {
 
         nodo6JP.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
+        jLabel16.setFont(new java.awt.Font("Noto Sans CJK SC", 1, 12)); // NOI18N
         jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel16.setText("006000");
 
@@ -240,7 +343,7 @@ public class ListaLig extends javax.swing.JFrame {
         nodo6JPLayout.setVerticalGroup(
             nodo6JPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, nodo6JPLayout.createSequentialGroup()
-                .addGap(0, 12, Short.MAX_VALUE)
+                .addGap(0, 16, Short.MAX_VALUE)
                 .addComponent(jLabel16))
         );
 
@@ -250,6 +353,7 @@ public class ListaLig extends javax.swing.JFrame {
 
         nodo8JP.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
+        jLabel18.setFont(new java.awt.Font("Noto Sans CJK SC", 1, 12)); // NOI18N
         jLabel18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel18.setText("008000");
 
@@ -273,6 +377,7 @@ public class ListaLig extends javax.swing.JFrame {
 
         nodo9JP.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
+        jLabel19.setFont(new java.awt.Font("Noto Sans CJK SC", 1, 12)); // NOI18N
         jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel19.setText("00900");
 
@@ -297,6 +402,7 @@ public class ListaLig extends javax.swing.JFrame {
         nodo10JP.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         nodo10JP.setPreferredSize(new java.awt.Dimension(80, 35));
 
+        jLabel20.setFont(new java.awt.Font("Noto Sans CJK SC", 1, 12)); // NOI18N
         jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel20.setText("01000");
 
@@ -363,7 +469,7 @@ public class ListaLig extends javax.swing.JFrame {
 
         nodo2JP.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jLabel10.setFont(new java.awt.Font("Noto Sans CJK SC", 1, 14)); // NOI18N
+        jLabel10.setFont(new java.awt.Font("Noto Sans CJK SC", 1, 12)); // NOI18N
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel10.setText("002000");
 
@@ -379,12 +485,13 @@ public class ListaLig extends javax.swing.JFrame {
         nodo2JPLayout.setVerticalGroup(
             nodo2JPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, nodo2JPLayout.createSequentialGroup()
-                .addGap(0, 10, Short.MAX_VALUE)
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jLabel10))
         );
 
         nodo7JP.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
+        jLabel17.setFont(new java.awt.Font("Noto Sans CJK SC", 1, 12)); // NOI18N
         jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel17.setText("007000");
 
@@ -400,7 +507,7 @@ public class ListaLig extends javax.swing.JFrame {
         nodo7JPLayout.setVerticalGroup(
             nodo7JPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, nodo7JPLayout.createSequentialGroup()
-                .addGap(0, 12, Short.MAX_VALUE)
+                .addGap(0, 16, Short.MAX_VALUE)
                 .addComponent(jLabel17))
         );
 
@@ -447,7 +554,7 @@ public class ListaLig extends javax.swing.JFrame {
                 .addComponent(FlechaLabel9)
                 .addGap(0, 0, 0)
                 .addComponent(nodo10JP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(13, Short.MAX_VALUE))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -455,71 +562,49 @@ public class ListaLig extends javax.swing.JFrame {
                 .addGap(53, 53, 53)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(nodo4JP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(nodo6JP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(FlechaLabel6)
-                                    .addComponent(FlechaLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(FlechaLabel2)
-                                            .addComponent(FlechaLabel1)
-                                            .addComponent(nodo1JP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addComponent(FlechaLabel3, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(nodo3JP, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(FlechaLabel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
-                                        .addComponent(nodo5JP, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                    .addComponent(FlechaLabel5)
-                                    .addComponent(nodo7JP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(0, 0, Short.MAX_VALUE)))
-                        .addGap(52, 52, 52))
+                        .addGap(2, 2, 2)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(nodo8JP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(nodo10JP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(FlechaLabel8)
+                                .addComponent(nodo9JP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(FlechaLabel9, javax.swing.GroupLayout.Alignment.LEADING))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(nodo2JP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(2, 2, 2)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(nodo8JP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(nodo10JP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(FlechaLabel8)
-                                        .addComponent(nodo9JP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(FlechaLabel9, javax.swing.GroupLayout.Alignment.LEADING))))
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(nodo4JP, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(nodo6JP, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(FlechaLabel6, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(FlechaLabel7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(FlechaLabel2)
+                                .addComponent(FlechaLabel1)
+                                .addComponent(nodo1JP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(FlechaLabel3, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(nodo3JP, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(nodo2JP, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(FlechaLabel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
+                            .addComponent(nodo5JP, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(FlechaLabel5, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(nodo7JP, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap(52, Short.MAX_VALUE))))
         );
 
-        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Menú", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Liberation Sans", 1, 18))); // NOI18N
-
-        checkJBT.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/check.png"))); // NOI18N
-        checkJBT.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                checkJBTActionPerformed(evt);
-            }
-        });
-
-        TamListJTF.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TamListJTFActionPerformed(evt);
-            }
-        });
-        TamListJTF.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                TamListJTFKeyReleased(evt);
-            }
-        });
+        jPanel3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jLabel7.setFont(new java.awt.Font("Liberation Sans", 1, 14)); // NOI18N
         jLabel7.setText("Tamaño de la lista: ");
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/check.png"))); // NOI18N
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        InsertNodojBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/check.png"))); // NOI18N
+        InsertNodojBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                InsertNodojBtnActionPerformed(evt);
+            }
+        });
+        InsertNodojBtn.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                InsertNodojBtnKeyReleased(evt);
             }
         });
 
@@ -544,6 +629,24 @@ public class ListaLig extends javax.swing.JFrame {
             }
         });
 
+        TamListJTF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TamListJTFActionPerformed(evt);
+            }
+        });
+        TamListJTF.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                TamListJTFKeyReleased(evt);
+            }
+        });
+
+        checkJBT.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/check.png"))); // NOI18N
+        checkJBT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkJBTActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -560,19 +663,20 @@ public class ListaLig extends javax.swing.JFrame {
                         .addComponent(ValoresNodoJTF, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
                         .addComponent(jLabel7)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(TamListJTF, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(TamListJTF, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(checkJBT, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(52, 52, 52))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(InsertNodojBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(checkJBT, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(50, 50, 50))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel7)
                         .addComponent(TamListJTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -581,8 +685,8 @@ public class ListaLig extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel8)
                     .addComponent(ValoresNodoJTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                    .addComponent(InsertNodojBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
                 .addComponent(jButton1)
                 .addGap(24, 24, 24))
         );
@@ -601,17 +705,22 @@ public class ListaLig extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(357, 357, 357)
                         .addComponent(jLabel1)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(180, 180, 180)
-                        .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGap(439, 439, 439)
+                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(26, 26, 26))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(canvas1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(120, 120, 120))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -622,15 +731,21 @@ public class ListaLig extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(50, 50, 50)
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(12, 12, 12)
-                        .addComponent(jButton3)
-                        .addGap(30, 30, 30))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(12, 12, 12)
+                                .addComponent(jButton3)
+                                .addGap(30, 30, 30))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(61, 61, 61)
+                                .addComponent(canvas1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(136, 136, 136))))
+                        .addGap(105, 105, 105))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -643,43 +758,48 @@ public class ListaLig extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 16, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void TamListJTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TamListJTFActionPerformed
-     
-    }//GEN-LAST:event_TamListJTFActionPerformed
+    private void checkJBTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkJBTActionPerformed
+        eliminaNodo();
+    }//GEN-LAST:event_checkJBTActionPerformed
 
-    private void ValoresNodoJTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ValoresNodoJTFActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ValoresNodoJTFActionPerformed
+    private void TamListJTFKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TamListJTFKeyReleased
+        System.out.println("entrooooo");
+        validaBotonTamanio();
+    }//GEN-LAST:event_TamListJTFKeyReleased
+
+    private void TamListJTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TamListJTFActionPerformed
+        //System.out.println("entrooooo");
+    }//GEN-LAST:event_TamListJTFActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void TamListJTFKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TamListJTFKeyReleased
-
-    }//GEN-LAST:event_TamListJTFKeyReleased
-
     private void ValoresNodoJTFKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ValoresNodoJTFKeyReleased
-     
+        System.out.println("entroooooo");
+        validaBotonNodo();
     }//GEN-LAST:event_ValoresNodoJTFKeyReleased
 
-    private void checkJBTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkJBTActionPerformed
-        validaBoton();
-        escondeNodo();
-    }//GEN-LAST:event_checkJBTActionPerformed
+    private void ValoresNodoJTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ValoresNodoJTFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ValoresNodoJTFActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void InsertNodojBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InsertNodojBtnActionPerformed
         nodo1JP.setVisible(true);
         FlechaLabel1.setVisible(true);
         nodo2JP.setVisible(true);
         FlechaLabel2.setVisible(true);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_InsertNodojBtnActionPerformed
+
+    private void InsertNodojBtnKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_InsertNodojBtnKeyReleased
+
+    }//GEN-LAST:event_InsertNodojBtnKeyReleased
 
     /**
      * @param args the command line arguments
@@ -726,12 +846,13 @@ public class ListaLig extends javax.swing.JFrame {
     private javax.swing.JLabel FlechaLabel7;
     private javax.swing.JLabel FlechaLabel8;
     private javax.swing.JLabel FlechaLabel9;
+    private javax.swing.JButton InsertNodojBtn;
     private javax.swing.JLabel Nodo1;
     private javax.swing.JTextField TamListJTF;
     private javax.swing.JTextField ValoresNodoJTF;
+    private java.awt.Canvas canvas1;
     private javax.swing.JButton checkJBT;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
