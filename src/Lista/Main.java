@@ -7,21 +7,21 @@ public class Main {
     public static void main(String[] args) throws Exception {
         
         Lista lista = new Lista();
-        int tama=0;
-        int tamaaux=0;
-        
-//        public bolean isDigit(char ch){
-            
-  //      }
+        int tama=0,bandera=0,bandera1=0;;
+        int tamaaux=0, numero=0;
         
         do{
-                System.out.print("Proporcione el tamaño de la lista ligada: ");
+            bandera=0;
+               System.out.print("Proporcione el tamaño de la lista ligada: ");
                 Scanner ta =new Scanner(System.in);
+            try{
+             
                 tama=ta.nextInt();
       
         if(tama<2) 
                 System.out.print("\nEl tamaño de la lista debe ser mayor a 1\n");
-        }while(tama<2);
+            }catch(Exception e){System.out.println("Error... Valor invalido"); bandera=1; ta.nextLine();}
+        }while(tama<2 || bandera!=0);
         
                 tamaaux=tama;
                 System.out.println("\n¡¡¡Se ha creado una lista!!!...\n");
@@ -49,19 +49,27 @@ public class Main {
              	case 1:
              		System.out.print("*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-**-*-*-*-*-*-*-*-*-*-*-**-*-*-*-*-*-*-*-*-*-*-*\n");
              		if(tamaaux>0) {
-                 		
-                                int numero;
+                            do{
+                 		bandera1=0;
+                               
                                 System.out.print("Proporcione el numero a ingresar en la lista ligada\n");
                                 Scanner nume = new Scanner(System.in);
-                                //if(nume.isDigit()){
-                                //}
-                                numero=nume.nextInt();
+                                    try{
+                                    numero=nume.nextInt();
+                                
+                                    }catch(Exception e){
+                                        System.out.println("Error... Valor invalido"); bandera1=1; 
+                                        nume.nextLine();
+                                    }
+                            }while(bandera1!=0);
+                                
+                                lista.editarPorPosicion(contador,numero);
                                 tamaaux=tamaaux-1;
-                                lista.editarPorPosicion(contador, numero);
                                 lista.listar();
                                 System.out.print("\n");
                                 lista.ordena();
-             		}
+                        }
+                            
              		else {
              			System.out.print("*-*-*-*-*-*-*-*-*-*-*-*-*-*-*Error lista ligada  llena*-*-*-*-*-*-*-*-*-*-*-*-*-*-*\n");
              		}

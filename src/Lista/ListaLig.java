@@ -78,6 +78,7 @@ public class ListaLig extends javax.swing.JFrame {
                         nodo9JP.setVisible(false);
                         FlechaLabel9.setVisible(false);
                         nodo10JP.setVisible(false);
+                                              
                 
                 case 3: FlechaLabel3.setVisible(false);
                         nodo4JP.setVisible(false);
@@ -153,9 +154,39 @@ public class ListaLig extends javax.swing.JFrame {
     }
     
     public void insertaValor(){
-        String maximo;
-        maximo = ValoresNodoJTF.getText();
-        Nodo1.setText(maximo);
+        
+        String numNodos;
+        int nodo;
+        numNodos = TamListJTF.getText();
+        nodo = Integer.parseInt(numNodos);
+        
+        if(nodo > 1){
+            switch(nodo){
+                
+                case 2: int maximo, valor;
+                        maximo = Integer.parseInt(Nodo1.getText());
+                        valor = Integer.parseInt(ValoresNodoJTF.getText());
+                        
+                            if(valor < maximo){
+                                String valorConvertido = String.valueOf(valor);
+                                Nodo1.setText(valorConvertido);
+                                System.out.println("entro 1");
+                                System.out.println("valor convertido----->"+valorConvertido);
+                                //System.out.println("entroooooo");
+                                //System.out.println("valor ----->"+valor);
+                            }else {
+                                String aux;
+                                String valorConvertido = String.valueOf(valor);
+                                aux = Nodo1.getText();
+                                Nodo1.setText(valorConvertido);
+                                Nodo2.setText(aux);
+                                System.out.println("entro 2"); 
+                            }
+                            System.out.println("salioooo");
+                            break;
+            }
+        }
+         
         
     }
     
@@ -239,10 +270,10 @@ public class ListaLig extends javax.swing.JFrame {
         InsertNodojBtn = new javax.swing.JButton();
         ValoresNodoJTF = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        VaciarNodosJbtn = new javax.swing.JButton();
         TamListJTF = new javax.swing.JTextField();
         checkJBT = new javax.swing.JButton();
-        Reiniciar = new javax.swing.JButton();
+        ReiniciarJbtn = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         canvas1 = new java.awt.Canvas();
 
@@ -401,7 +432,7 @@ public class ListaLig extends javax.swing.JFrame {
         nodo8JPLayout.setVerticalGroup(
             nodo8JPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, nodo8JPLayout.createSequentialGroup()
-                .addGap(0, 13, Short.MAX_VALUE)
+                .addGap(0, 18, Short.MAX_VALUE)
                 .addComponent(Nodo8))
         );
 
@@ -425,7 +456,7 @@ public class ListaLig extends javax.swing.JFrame {
         nodo9JPLayout.setVerticalGroup(
             nodo9JPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, nodo9JPLayout.createSequentialGroup()
-                .addGap(0, 12, Short.MAX_VALUE)
+                .addGap(0, 17, Short.MAX_VALUE)
                 .addComponent(Nodo9))
         );
 
@@ -450,7 +481,7 @@ public class ListaLig extends javax.swing.JFrame {
         nodo10JPLayout.setVerticalGroup(
             nodo10JPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, nodo10JPLayout.createSequentialGroup()
-                .addGap(0, 12, Short.MAX_VALUE)
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(Nodo10, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -597,28 +628,29 @@ public class ListaLig extends javax.swing.JFrame {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(nodo4JP, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(nodo6JP, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(FlechaLabel6, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(FlechaLabel7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(FlechaLabel3, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(nodo3JP, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(FlechaLabel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(nodo5JP, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(FlechaLabel5, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(nodo7JP, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(nodo2JP, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(nodo2JP, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(FlechaLabel5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(FlechaLabel6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(FlechaLabel7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addContainerGap(52, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(FlechaLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(nodo9JP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(nodo8JP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(FlechaLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGap(2, 2, 2)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(nodo10JP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(FlechaLabel8)
-                                        .addComponent(nodo9JP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(nodo8JP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(FlechaLabel9, javax.swing.GroupLayout.Alignment.LEADING)))
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                                        .addComponent(FlechaLabel9)
+                                        .addGap(3, 3, 3))
+                                    .addComponent(nodo10JP, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addComponent(nodo1JP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(FlechaLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -656,10 +688,10 @@ public class ListaLig extends javax.swing.JFrame {
         jLabel8.setFont(new java.awt.Font("Liberation Sans", 1, 14)); // NOI18N
         jLabel8.setText("Insertar valor");
 
-        jButton1.setText("Vaciar nodos");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        VaciarNodosJbtn.setText("Vaciar nodos");
+        VaciarNodosJbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                VaciarNodosJbtnActionPerformed(evt);
             }
         });
 
@@ -681,10 +713,10 @@ public class ListaLig extends javax.swing.JFrame {
             }
         });
 
-        Reiniciar.setText("Reiniciar");
-        Reiniciar.addActionListener(new java.awt.event.ActionListener() {
+        ReiniciarJbtn.setText("Reiniciar");
+        ReiniciarJbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ReiniciarActionPerformed(evt);
+                ReiniciarJbtnActionPerformed(evt);
             }
         });
 
@@ -697,9 +729,9 @@ public class ListaLig extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(10, 10, 10)
-                        .addComponent(jButton1)
+                        .addComponent(VaciarNodosJbtn)
                         .addGap(27, 27, 27)
-                        .addComponent(Reiniciar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(ReiniciarJbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -733,8 +765,8 @@ public class ListaLig extends javax.swing.JFrame {
                     .addComponent(InsertNodojBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(Reiniciar))
+                    .addComponent(VaciarNodosJbtn)
+                    .addComponent(ReiniciarJbtn))
                 .addGap(22, 22, 22))
         );
 
@@ -816,7 +848,7 @@ public class ListaLig extends javax.swing.JFrame {
     }//GEN-LAST:event_checkJBTActionPerformed
 
     private void TamListJTFKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TamListJTFKeyReleased
-        System.out.println("entrooooo");
+        //System.out.println("entrooooo");
         validaBotonTamanio();
     }//GEN-LAST:event_TamListJTFKeyReleased
 
@@ -824,12 +856,12 @@ public class ListaLig extends javax.swing.JFrame {
         //System.out.println("entrooooo");
     }//GEN-LAST:event_TamListJTFActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void VaciarNodosJbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VaciarNodosJbtnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_VaciarNodosJbtnActionPerformed
 
     private void ValoresNodoJTFKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ValoresNodoJTFKeyReleased
-        System.out.println("entroooooo");
+        //System.out.println("entroooooo");
         validaBotonNodo();
     }//GEN-LAST:event_ValoresNodoJTFKeyReleased
 
@@ -839,15 +871,18 @@ public class ListaLig extends javax.swing.JFrame {
 
     private void InsertNodojBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InsertNodojBtnActionPerformed
         insertaValor();
+        ValoresNodoJTF.setText("");
     }//GEN-LAST:event_InsertNodojBtnActionPerformed
 
     private void InsertNodojBtnKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_InsertNodojBtnKeyReleased
 
     }//GEN-LAST:event_InsertNodojBtnKeyReleased
 
-    private void ReiniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReiniciarActionPerformed
+    private void ReiniciarJbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReiniciarJbtnActionPerformed
         reinicaLista();
-    }//GEN-LAST:event_ReiniciarActionPerformed
+        TamListJTF.setText("");
+        ValoresNodoJTF.setText("");
+    }//GEN-LAST:event_ReiniciarJbtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -905,12 +940,12 @@ public class ListaLig extends javax.swing.JFrame {
     private javax.swing.JLabel Nodo7;
     private javax.swing.JLabel Nodo8;
     private javax.swing.JLabel Nodo9;
-    private javax.swing.JButton Reiniciar;
+    private javax.swing.JButton ReiniciarJbtn;
     private javax.swing.JTextField TamListJTF;
+    private javax.swing.JButton VaciarNodosJbtn;
     private javax.swing.JTextField ValoresNodoJTF;
     private java.awt.Canvas canvas1;
     private javax.swing.JButton checkJBT;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel21;
