@@ -44,7 +44,9 @@ public class Main {
                 System.out.println("Proporcione una opcion:");
       		//System.out.print("*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-**-*-*-*-*-*-*-*-*-*-*-**-*-*-*-*-*-*-*-*-*-*-*\n");
                 Scanner opc =new Scanner(System.in);
+             try {
                 opcion=opc.nextInt();
+                }catch(Exception e) {System.out.println("Error... Valor invalido");}
              switch(opcion) {
              	case 1:
              		System.out.print("*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-**-*-*-*-*-*-*-*-*-*-*-**-*-*-*-*-*-*-*-*-*-*-*\n");
